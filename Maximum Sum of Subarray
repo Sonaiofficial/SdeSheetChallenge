@@ -1,0 +1,18 @@
+public class Solution {
+	
+	public static long maxSubarraySum(int[] arr, int n) {
+		long maxNum=arr[0], curNum=0;
+        for(int i=0;i<n;i++){
+            curNum+=arr[i];
+            if(maxNum<curNum)
+                maxNum=curNum;
+           
+            if(curNum<0)
+                curNum=0;
+        }
+        if(maxNum<=0) return 0;
+        return maxNum;
+            
+	}
+
+}
